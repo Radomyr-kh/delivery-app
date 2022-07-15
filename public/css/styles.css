@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/******* Navigation Bar **********/
+.nav-bar ul {
+  display: flex;
+  width: 80%;
+  margin: 20px auto;
+}
+.nav-bar ul li {
+  list-style: none;
+  margin: 0 20px 0 0;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+/******* Main Content *********/
+.flexbox-container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+/* Left side*/
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  width: 30%;
+}
+.shop-box {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px 5px;
+  width: 70%;
+}
+
+.shop-box p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.shop-box:hover,
+.item-box button:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+h3 {
+  text-align: center;
+}
+
+/************** Right side *************/
+.shop {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px 10px;
+  width: 80%;
+}
+
+.item-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+
+  width: 260px;
+  max-height: 400px;
+}
+.item-box img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 150px;
+}
+
+.item-box-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-box-info span {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-box button {
+  width: 50%;
+  height: 40px;
+  margin: auto 25%;
+  border-radius: 10px;
+}
+
+/* Responsive breakpoints*/
+
+/* Tablets */
+@media (max-width: 768px) {
+  .nav-bar ul {
+    padding: 0;
+    justify-content: center;
+  }
+  .flexbox-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto 40px auto;
+  }
+  .nav-bar,
+  .nav-bar ul,
+  .left,
+  .shop,
+  .item-box {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .item-box img {
+    max-height: 250px;
+    max-width: 600px;
+    align-self: center;
+  }
+  .shop {
+    flex-direction: column;
+  }
+}
