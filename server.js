@@ -1,3 +1,6 @@
+const { shopItemsData } = require("./public/javascript/Data");
+// const { x } = require("./public/javascript/cart");
+
 require("dotenv").config();
 
 const express = require("express");
@@ -25,6 +28,7 @@ const orderSchema = {
   adress: String,
   date: String,
   time: String,
+  // order: Array,
 };
 const Order = mongoose.model("Order", orderSchema);
 
@@ -37,15 +41,18 @@ app.get("/cart", (req, res) => {
 });
 app.post("/cart", (req, res) => {
   const date = new Date();
-  let newOrder = new Order({
-    // userName: req.body.name,
-    // email: req.body.email,
-    // phone: req.body.phone,
-    // adress: req.body.address,
-    // date: date.toLocaleDateString(),
-    // time: date.toLocaleTimeString(),
-  });
+  // let newOrder = new Order({
+  //   userName: req.body.name,
+  //   email: req.body.email,
+  //   phone: req.body.phone,
+  //   adress: req.body.address,
+  //   date: date.toLocaleDateString(),
+  //   time: date.toLocaleTimeString(),
+  //   order: basket,
+  // });
   // newOrder.save();
+  console.log(req.body);
+
   res.redirect("back");
 });
 
