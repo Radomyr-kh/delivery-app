@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -50,6 +51,6 @@ app.post("/cart", (req, res) => {
   res.redirect("back");
 });
 
-app.listen(3000, function () {
-  console.log("Express server listening on port 3000");
+app.listen(PORT, function () {
+  console.log(`Express server listening on port ${PORT}`);
 });
