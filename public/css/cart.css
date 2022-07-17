@@ -181,3 +181,8 @@ label {
     margin: 10px auto 50px auto;
   }
 }
+
+/*  */
+#user-order {
+  visibility: hidden;
+}

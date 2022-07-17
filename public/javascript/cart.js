@@ -117,5 +117,18 @@ const clearCart = () => {
 //   };
 // }
 
-const x = JSON.parse(localStorage.getItem("data"));
-module.exports = { x };
+// const x = JSON.parse(localStorage.getItem("data"));
+// module.exports = { x };
+
+// ********Send Order in a Form*********
+
+// const order = JSON.stringify(basket)
+// const orderElement = document.createElement("div");
+// orderElement.value = JSON.stringify(basket);
+const myLocalStorage = localStorage.getItem("data");
+// document.getElementById("user-order").value = JSON.stringify(myLocalStorage);
+document.getElementById("user-order").value = myLocalStorage;
+
+// const arr = '[{"id":"1","item":1}, {"id":"2","item":2}]';
+// const objs = JSON.parse(arr);
+// console.log(objs);

@@ -71,4 +71,4 @@ const shopItemsData = [
   ],
 ];
 
-module.exports = { shopItemsData };
+// module.exports = { shopItemsData };
