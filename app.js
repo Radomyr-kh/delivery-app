@@ -1,36 +1,9 @@
-// const { shopItemsData } = require("./public/javascript/Data");
-// const { x } = require("./public/javascript/cart");
-
-// localStorage for Node.js
-const LocalStorage = require("node-localstorage").LocalStorage,
-  myLocalStorage = new LocalStorage("./public/javascript/cart");
-//
-
-// *********** JSDOM ************
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
-const myFile = JSDOM.fromFile("./public/cart.html").then((dom) => {
-  return dom.window.document
-    .getElementById("total-price")
-    .getElementsByTagName("span")[0]
-    .innerHTML.replace(" $", "");
-});
-
-// console.log(myFile);
-// console.log(myFile.window.document.getElementById("total-price"));
-
-// console.log(myFile.getElementById("total-price"));
-
-// *********** JSDOM ************
-
 require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
-// const { log } = require("console");
 
 const app = express();
 
@@ -75,8 +48,6 @@ app.post("/cart", (req, res) => {
     time: date.toLocaleTimeString(),
   });
   newOrder.save();
-  // console.log(req.body);
-  // console.log(newOrder);
   res.redirect("back");
 });
 

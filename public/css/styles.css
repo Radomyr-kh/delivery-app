@@ -28,7 +28,7 @@
   margin: auto;
 }
 
-/* Left side*/
+/******** Left side **********/
 .left {
   display: flex;
   flex-direction: column;

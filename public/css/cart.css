@@ -117,7 +117,7 @@ label {
   cursor: pointer;
 }
 
-/* Checkout */
+/******** Checkout ********/
 .checkout {
   display: flex;
   flex-direction: row-reverse;
@@ -142,8 +142,12 @@ label {
   background-color: lightgrey;
   cursor: pointer;
 }
+/* user order info */
+#user-order {
+  display: none;
+}
 
-/* Responsive */
+/******* Responsiveness *******/
 @media (max-width: 768px) {
   .container {
     display: flex;
@@ -172,7 +176,6 @@ label {
     max-width: 600px;
     max-height: 200px;
   }
-
   .checkout {
     display: flex;
     flex-direction: column;
@@ -180,9 +183,4 @@ label {
     height: 100px;
     margin: 10px auto 50px auto;
   }
-}
-
-/*  */
-#user-order {
-  visibility: hidden;
 }

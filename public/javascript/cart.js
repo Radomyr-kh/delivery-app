@@ -1,9 +1,6 @@
 const shoppingCart = document.querySelector(".shopping-cart-box");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-// console.log(shopItemsData);
-console.log("basket", basket);
-
 // 1 - Generating cart items
 const generateCartItems = () => {
   if (basket.length !== 0) {
@@ -13,7 +10,6 @@ const generateCartItems = () => {
           return x.find((el) => el.id === storageItem.id) || [];
         });
         search = search.find((el) => el.id === storageItem.id) || [];
-        // console.log("search - ", search);
         return `
         <div class="item-box" id=${search.id}>
           <img src=${search.img}>
@@ -44,11 +40,9 @@ const TotalAmount = () => {
           return x.find((el) => el.id === storageItem.id) || [];
         });
         search = search.find((el) => el.id === storageItem.id) || [];
-        // console.log(search);
         return storageItem.item * search.price;
       })
       .reduce((current, total) => current + total, 0);
-    // console.log(amount);
 
     // display total
     totalPriceBox.innerHTML = `${amount.toFixed(2)} $`;
@@ -87,8 +81,6 @@ const removeItem = (id) => {
   TotalAmount();
   generateCartItems();
   localStorage.setItem("data", JSON.stringify(basket));
-
-  console.log(basket);
 };
 
 // clear cart after purchase
@@ -102,33 +94,6 @@ const clearCart = () => {
   }
 };
 
-/////////////////
-// function getOrderInfo() {
-//   return {
-//     order: [
-//       {
-//         id: "1",
-//         name: "pizza-1",
-//         price: 100,
-//         quantity: 5,
-//       },
-//     ],
-//     total: TotalAmount(),
-//   };
-// }
-
-// const x = JSON.parse(localStorage.getItem("data"));
-// module.exports = { x };
-
-// ********Send Order in a Form*********
-
-// const order = JSON.stringify(basket)
-// const orderElement = document.createElement("div");
-// orderElement.value = JSON.stringify(basket);
+// ********Send user order in a form*********
 const myLocalStorage = localStorage.getItem("data");
-// document.getElementById("user-order").value = JSON.stringify(myLocalStorage);
 document.getElementById("user-order").value = myLocalStorage;
-
-// const arr = '[{"id":"1","item":1}, {"id":"2","item":2}]';
-// const objs = JSON.parse(arr);
-// console.log(objs);
